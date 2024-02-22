@@ -11,11 +11,19 @@ import { translate } from '@vitalets/google-translate-api';
 
 
 
+
+
 export default function Home() {
   const [inputValue, setInputValue] = useState('');
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+
+  const next_key=process.env.NEXT_PUBLIC_API_KEY
+
+
+
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -51,7 +59,7 @@ export default function Home() {
       }
   
       // Call the generative model with the translated message
-      const genAI = new GoogleGenerativeAI("AIzaSyCT-ldR05im-u-KhWuuJzaxtSZwYlIspfE");
+      const genAI = new GoogleGenerativeAI(next_key);
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
       const result = await model.generateContent(translatedText);
       const response = await result.response;

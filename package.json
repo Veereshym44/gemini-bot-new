@@ -16,7 +16,6 @@
     "@google/generative-ai": "^0.2.1",
     "@vitalets/google-translate-api": "^9.2.0",
     "axios": "^1.6.7",
-    "dotenv": "^16.4.5",
     "next": "13.2.4",
     "node-google-translate-skidz": "^1.1.2",
     "react": "18.2.0",
